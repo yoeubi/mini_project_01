@@ -52,5 +52,22 @@
   </insert>
 
 <!--  회원가입   -->
+
+<!-- 상태 메세지 확인 -->
+  <select id = "selectStatueMsg" parameterType = "int" resultType="string">
+	select statue_msg
+	  from tb_members
+	 where no = #{no}
+  </select>
+<!-- 상태 메세지 확인 -->
+
+<!-- 상태 메세지 수정 -->
+  <update id = "updateStatueMsg" parameterType = "BitMessenger">
+  	update tb_members
+  	   set statue_msg = #{statueMsg}
+  	 where no = #{no}
+  </update>
+<!-- 상태 메세지 수정 -->
+
   <!--  진솔   -->
 </mapper>
