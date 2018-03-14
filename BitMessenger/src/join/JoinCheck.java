@@ -1,6 +1,4 @@
 package join;
-
-import util.Getter;
 /**
  * 
  * @author 진솔
@@ -10,6 +8,8 @@ import util.Getter;
  *		Password에 한글이 들어가는지 체크
  *
  */
+import util.Getter;
+
 
 public class JoinCheck {
 	public String overlapCheckID(String id) {

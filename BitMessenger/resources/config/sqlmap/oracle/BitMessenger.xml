@@ -4,6 +4,9 @@
 
 
 <mapper namespace="mapper.BitMessengerMapper">
+
+<!--  진솔   -->
+	<!--  회원가입  -->
   <resultMap id = "BitMessengerMap" type = "BitMessenger">
   		
   		<result column="no" property="no"/>
@@ -48,5 +51,6 @@
   		   )
   </insert>
 
-  
+<!--  회원가입   -->
+  <!--  진솔   -->
 </mapper>

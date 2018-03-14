@@ -30,12 +30,30 @@ public class Getter {
 	
 	public static String getStr(String str) {
 		System.out.print(str);
-		return sc.nextLine();
+		String item = sc.nextLine();
+		while(true) {
+			if(item.equals("")) {
+				System.out.println("잘못 입력하셨습니다.");
+				System.out.print(str);
+				item = sc.nextLine();
+			}
+			else break;
+		}
+		return item;
 	}
 	
 	public static int getInt(String str) {
 		System.out.print(str);
-		return Integer.parseInt(sc.nextLine());
+		String item = sc.nextLine();
+		while(true) {
+			if(item.equals("")) {
+				System.out.println("잘못 입력하셨습니다.");
+				System.out.print(str);
+				item = sc.nextLine();
+			}
+			else break;
+		}
+		return Integer.parseInt(item);
 	}
 	
 	
