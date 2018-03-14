@@ -1,5 +1,5 @@
 package friend;
 
-public class recommend {
+public class Recommend {
 
 }

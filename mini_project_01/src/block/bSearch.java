@@ -1,5 +1,5 @@
 package block;
 
-public class bSearch {
+public class Bsearch {
 
 }

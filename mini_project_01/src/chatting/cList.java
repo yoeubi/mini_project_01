@@ -1,5 +1,5 @@
 package chatting;
 
-public class cList {
-
+public class Clist {
+	
 }

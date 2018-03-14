@@ -1,5 +1,7 @@
 package chatting;
 
-public class cMainUI {
-
+public class CmainUI {
+	public void service() {
+		
+	}
 }

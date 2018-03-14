@@ -1,5 +1,5 @@
 package friend;
 
-public class fList {
+public class Flist {
 
 }

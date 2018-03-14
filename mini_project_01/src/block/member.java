@@ -1,5 +1,5 @@
 package block;
 
-public class member {
+public class Member {
 
 }

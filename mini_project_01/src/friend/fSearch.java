@@ -1,5 +1,5 @@
 package friend;
 
-public class fSearch {
+public class Fsearch {
 
 }

@@ -1,5 +1,5 @@
 package priv_Info;
 
-public class updateInfo {
+public class UpdateInfo {
 
 }

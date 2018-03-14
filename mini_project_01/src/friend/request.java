@@ -1,5 +1,5 @@
 package friend;
 
-public class request {
+public class Request {
 
 }

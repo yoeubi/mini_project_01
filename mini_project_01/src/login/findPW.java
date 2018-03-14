@@ -1,5 +1,5 @@
 package login;
 
-public class findPW {
+public class FindPW {
 
 }

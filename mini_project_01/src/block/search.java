@@ -1,5 +1,5 @@
 package block;
 
-public class search {
+public class Search {
 
 }

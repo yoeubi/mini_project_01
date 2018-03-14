@@ -1,5 +1,5 @@
 package login;
 
-public class findID {
+public class FindID {
 
 }

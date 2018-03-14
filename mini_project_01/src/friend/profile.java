@@ -1,5 +1,5 @@
 package friend;
 
-public class profile {
+public class Profile {
 
 }

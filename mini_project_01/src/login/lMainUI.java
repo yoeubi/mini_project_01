@@ -1,5 +1,5 @@
 package login;
 
-public class lMainUI {
+public class LmainUI {
 
 }

@@ -1,5 +1,5 @@
 package friend;
 
-public class add {
+public class Add {
 
 }

@@ -1,5 +1,5 @@
 package block;
 
-public class check {
+public class Check {
 
 }
