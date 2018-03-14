@@ -23,12 +23,12 @@
   
   <select id = "selectMemberByNoGetID" parameterType="string" resultType="string">
   	select id
-  	  from tb_memberes
+  	  from tb_members
   	 where id=#{id}
   </select>
   
   <insert id = "insertMember" parameterType="BitMessenger">
-  	insert into tb_board(
+  	insert into tb_members(
   		    no,
   			id,
   			pass,
