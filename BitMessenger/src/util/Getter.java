@@ -1,5 +1,12 @@
 package util;
-
+/**
+ * 
+ * @author 진솔
+ * 		mapper 객체를 호출,
+ * 		Scanner 를 이용하여 문자열과 정수를 받기 위한
+ * 		Getter 클래스
+ * 
+ */
 import java.util.Scanner;
 
 import org.apache.ibatis.session.SqlSession;
