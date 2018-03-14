@@ -1,0 +1,15 @@
+create table tb_members(
+  no number primary key,
+  id        varchar2(50),
+  pass      varchar2(50),
+  name      varchar2(50),
+  phon_no   varchar2(50),
+  pass_hint varchar2(200),
+  pass_key  varchar2(100),
+  join_date date default sysdate,
+  invisible number default 1,
+  block_search number default 1,
+  statue_msg varchar2(500)
+);
+
+create sequence s_member_no;
