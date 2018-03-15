@@ -3,11 +3,8 @@ package privateInfo;
 import domain.BitMessenger;
 import util.Getter;
 
-public class StatueMsg {
-	BitMessenger info;
-	public StatueMsg(BitMessenger info) {
-		this.info = info;
+public class UpdateStatueMsg {
+	public UpdateStatueMsg(BitMessenger info) {
 		Getter.getMapper().updateStatueMsg(info);
 	}
-
 }

@@ -1,5 +1,10 @@
 package privateInfo.UI;
 
-abstract class UpdateInfoBaseUI {
+import domain.BitMessenger;
+import util.Getter;
+
+interface UpdateInfoBaseUI {
+	BitMessenger info = Getter.getLoginInfo();
+	UpdateSubUI subUI = new UpdateSubUI();
 	abstract void service();
 }

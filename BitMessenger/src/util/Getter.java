@@ -12,11 +12,13 @@ import java.util.Scanner;
 import org.apache.ibatis.session.SqlSession;
 
 import common.db.MyAppSqlConfig;
+import domain.BitMessenger;
 import mapper.BitMessengerMapper;
 
 public class Getter {
 	private static BitMessengerMapper mapper;
 	private static Scanner sc = new Scanner(System.in);
+	private static BitMessenger info = new BitMessenger();
 	
 	static {
 		SqlSession session = MyAppSqlConfig.getSqlSession();
@@ -56,6 +58,10 @@ public class Getter {
 		return Integer.parseInt(item);
 	}
 	
+	public static BitMessenger getLoginInfo() {
+		info.setNo(3);
+		return info;
+	}
 	
 	
 	

@@ -69,5 +69,22 @@
   </update>
 <!-- 상태 메세지 수정 -->
 
+<!-- password 확인 -->
+  <select id = "selectPassword" parameterType = "int" resultType="string">
+	select pass
+	  from tb_members
+	 where no = #{no}
+  </select>
+<!-- password 확인 -->
+
+<!-- password 수정 -->
+  <update id = "updatePassword" parameterType = "BitMessenger">
+  	update tb_members
+  	   set pass = #{pass}
+  	 where no = #{no}
+  </update>
+<!-- password 수정 -->
+
+
   <!--  진솔   -->
 </mapper>

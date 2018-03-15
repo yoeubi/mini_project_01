@@ -1,17 +1,14 @@
-package join;
+package checkObject;
 /**
  * 
  * @author 진솔
- *		
- *		회원가입시 중복된 ID 체크
- *		ID에 한글 및 특수문자가 들어가는지 체크
- *		Password에 한글이 들어가는지 체크
- *
+ * 		
+ * 		ID 무결성 체크 클래스
+ * 
  */
 import util.Getter;
 
-
-public class JoinCheck {
+public class CheckID {
 	public String overlapCheckID(String id) {
 		return Getter.getMapper().selectMemberByNoGetID(id);
 	}
@@ -25,16 +22,4 @@ public class JoinCheck {
 		}
 		return true;
 	}
-	
-	public boolean spellCheckPass(String pass) {
-		for(int i = 0 ; i < pass.length() ; i++) {
-			if(pass.charAt(i) >= 33 && pass.charAt(i) <=126) { continue; }
-			else return false;
-		}
-		return true;
-	}
-	
-	
-	
-	
 }
