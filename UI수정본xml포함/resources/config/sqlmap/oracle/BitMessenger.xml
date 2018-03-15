@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapper.BitMessengerMapper">
+  <resultMap id = "BitMessengerMap" type = "BitMessenger">
+  		
+  		<result column="no" property="no"/>
+  		<result column="id" property="id"/>
+  		<result column="pass" property="pass"/>
+  		<result column="name" property="name"/>
+  		<result column="phon_no" property="phonNo"/>
+  		<result column="pass_hint" property="passHint"/>
+  		<result column="pass_key" property="passKey"/>
+  		<result column="join_date" property="joinDate"/>
+  		<result column="invisible" property="invisible"/>
+  		<result column="block_search" property="blockSearch"/>
+  		<result column="statue_msg" property="statueMsg"/>
+  	
+  </resultMap>
+
+  
+  <select id = "selectMemberByNoGetID" parameterType="string" resultType="string">
+  	select id
+  	  from tb_members
+  	 where id=#{id}
+  </select>
+  
+  <!-- 로그인 아이디와 비번이 매치되는지  -jy-->
+  <select id="selectUserIdPass" parameterType="BitMessenger" resultType="string">
+  	select NVL(no, 0)
+  		from tb_members
+  	   where id = #{id}	 
+  	   and pass = #{pass}
+  
+  </select>
+  
+  <insert id = "insertMember" parameterType="BitMessenger">
+  	insert into tb_members(
+  		    no,
+  			id,
+  			pass,
+  			name,
+  			phon_no,
+  			pass_hint,
+  			pass_key
+  		   )
+  		   values(
+  		   s_member_no.nextval,
+  		   #{id},
+  		   #{pass},
+  		   #{name},
+  		   #{phonNo},
+  		   #{passHint},
+  		   #{passKey}
+  		   )
+  </insert>
+
+  
+</mapper>
