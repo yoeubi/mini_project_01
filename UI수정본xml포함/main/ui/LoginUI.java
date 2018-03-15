@@ -18,7 +18,7 @@ public class LoginUI {
 		
 	info.setId(Getter.getStr("ID : "));
 	info.setPass(Getter.getStr("PassWord : "));
-	String result = Getter.getMapper().selectUserIdPass(info);
+	BitMessenger result = Getter.getMapper().selectUserIdPass(info);
 	
 	if(result == null) {
 		System.out.println("ID or PassWord가 일치하지 않습니다.");
@@ -29,31 +29,28 @@ public class LoginUI {
 		login.choose(para);
 		
 	}else {
-		new SignInUI().signService();
-		Getter.Loginuserinfo(info);		
+		Getter.info = result;
+		SignInUI sign = new SignInUI();
+		sign.signService();
+			
 	}
 	
 	}
 
 	public void choose(String para) {
-	
 		
-		
-		if(para == "1") {
+		if(para.equals("1")) {  
 			FindIDPwUI find = new FindIDPwUI();
 			find.findIdPw();
-		}else if(para == "2"){
+		}else if(para.equals("2")){
 			Main main = new Main();
 			main.service();
 		}else {
 			System.out.println("입력하신 번호는 항목에 없습니다. ");
+			new LoginUI().login();
 		}
 		
-		
-		
 	}
-	
-	
 	
 	
 }

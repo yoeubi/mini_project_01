@@ -2,24 +2,25 @@ package main.ui;
 
 
 import domain.BitMessenger;
+import util.Getter;
 
 public class FindIDUI  {
 
-//	if 1 = ID찾기, 2= Pass찾기
-//
-//	public void service() {
-//		BitMessenger board = new BitMessenger();
-//
-//		board.setName(getStr("이름 : "));
-//		board.setPhoneNo(getStr("Phone no : "));
-////		mapper.insertID(board);
+//	 ID찾기
+
+	public void service() {
+		BitMessenger info = new BitMessenger();
+
+		info.setId(Getter.getStr(" 이름 : "));;
+		info.setPhonNo(Getter.getStr("Phone o :"));
+//		mapper.insertID(info);
 	
 		
 		
 		
 	}
 	
-	
+}	
 	
 	
 	

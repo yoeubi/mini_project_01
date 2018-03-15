@@ -28,11 +28,29 @@
   </select>
   
   <!-- 로그인 아이디와 비번이 매치되는지  -jy-->
-  <select id="selectUserIdPass" parameterType="BitMessenger" resultType="string">
-  	select NVL(no, 0)
+  <select id="selectUserIdPass" parameterType="BitMessenger" resultType="BitMessenger">
+  	select  id,
+  			pass,
+  			name,
+  			phon_no,
+  			pass_hint,
+  			pass_key,
+  			join_date,
+  			invisible,
+  			block_search,
+  			statue_msg,
+  			NVL(no, 0),
+  			fId,
+  			request_date,
+  			acceptance
   		from tb_members
   	   where id = #{id}	 
   	   and pass = #{pass}
+  
+  </select>
+  <!-- ID 찾기  -jy-->
+  <select id="selectUserIdPhoneNo" parameterType="BitMessenger" resultType="BitMessenger">
+  	select 
   
   </select>
   

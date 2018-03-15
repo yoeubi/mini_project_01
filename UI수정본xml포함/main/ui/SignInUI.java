@@ -41,12 +41,14 @@ public class SignInUI {
 		
 		Main main = new Main();
 		main.service();
+		Getter.info = null;
 		
 	}
 	
 	private void quit() {
 		System.out.println("메신저 종료합니다.");
 		System.exit(0);
+		Getter.info = null;
 	}
 
 	private String menu() {

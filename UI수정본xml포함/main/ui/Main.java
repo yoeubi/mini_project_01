@@ -22,7 +22,7 @@ public class Main {
 			case "1": join.joinUI(); break;
 			case "2": login.login(); break;
 			case "3": findIdPw.findIdPw(); break;
-			default :  worngNo(); break;		 
+			default :  worngNo(); 		 
 		}
 			
 	}
@@ -30,6 +30,7 @@ public class Main {
 			
 	private void worngNo() {
 		System.out.println("처리할 항목이 아닙니다.");
+		service();
 	}
 			
 	
