@@ -1,4 +1,4 @@
-package privateInfo;
+package privateInfo.Update;
 
 import privateInfo.UI.UpdateInfoUI;
 

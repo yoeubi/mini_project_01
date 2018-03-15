@@ -14,6 +14,7 @@ public class BitMessenger {
 	private int invisible;
 	private int blockSearch;
 	private String statueMsg;
+	
 	public int getNo() {
 		return no;
 	}

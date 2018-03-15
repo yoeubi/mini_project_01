@@ -1,18 +1,19 @@
 package privateInfo.UI;
 
 import checkObject.CheckPass;
-import privateInfo.UpdatePassword;
+import privateInfo.Update.UpdatePassword;
 import util.Getter;
 
 public class UpdatePasswordUI implements UpdateInfoBaseUI {
 	private CheckPass cp = new CheckPass();
 
 	public void service() {
-		confirmPassUI(Getter.getMapper().selectPassword(info.getNo()),"기존");
+		subUI.checkPassword(Getter.getMapper().selectPassword(info.getNo()),"기존",cp);
 		while(true) {
 			switch(subUI.ui("Password")) {
 			case "1" : subUI.msg("Password",Getter.getMapper().selectPassword(info.getNo()));
 				       info.setPass(checkPassUI());
+					   System.out.println("변경이 완료되었습니다.");
 				       new UpdatePassword(info);
 				       break;		
 			case "0" : return;
@@ -25,7 +26,7 @@ public class UpdatePasswordUI implements UpdateInfoBaseUI {
 		String pass = Getter.getStr("변경할 Password 입력 : ");
 		while(true) {
 			if(cp.spellCheckPass(pass)) {
-				if(confirmPassUI(pass,"변경할")) return pass; 
+				if(subUI.checkPassword(pass,"변경할",cp)) return pass; 
 			}
 			else {
 				System.out.println("---------------------------------");
@@ -36,18 +37,4 @@ public class UpdatePasswordUI implements UpdateInfoBaseUI {
 			}
 		}
 	}
-	
-	private boolean confirmPassUI(String orgPass, String msg) {
-		String confirmPass = Getter.getStr(msg+" Password 확인 : ");
-		while(true) {
-			if(cp.checkConfirmPass(orgPass, confirmPass)) return true;
-			else {
-				System.out.println("---------------------------------");
-				System.out.println("--입력하신 Password 와 일치하지 않습니다--");
-				System.out.println("---------------------------------");
-				confirmPass = Getter.getStr(msg+" Password 확인 : ");
-			}
-		}
-	}
-	
 }

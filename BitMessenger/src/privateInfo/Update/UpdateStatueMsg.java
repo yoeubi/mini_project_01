@@ -1,4 +1,4 @@
-package privateInfo;
+package privateInfo.Update;
 
 import domain.BitMessenger;
 import util.Getter;

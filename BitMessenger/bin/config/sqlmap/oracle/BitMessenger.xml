@@ -85,6 +85,57 @@
   </update>
 <!-- password 수정 -->
 
+<!-- 핸드폰번호 확인 -->
+  <select id = "selectPhonNo" parameterType = "int" resultType="string">
+	select phon_no
+	  from tb_members
+	 where no = #{no}
+  </select>
+<!-- 핸드폰번호 확인 -->
+
+<!-- 핸드폰번호 수정 -->
+  <update id = "updatePhonNo" parameterType = "BitMessenger">
+  	update tb_members
+  	   set phon_no = #{phonNo}
+  	 where no = #{no}
+  </update>
+<!-- 핸드폰번호 수정 -->
+
+
+<!-- 회원탈퇴 -->
+  <update id = "updateinvisibleMember" parameterType = "BitMessenger">
+  	update tb_members
+  	   set invisible = #{invisible}
+  	 where no = #{no}
+  </update>
+<!-- 회원탈퇴 -->
+
+
+<!-- 검색차단상태 확인 -->
+  <select id = "selectBlockSearch" parameterType = "int" resultType="int">
+	select block_search
+	  from tb_members
+	 where no = #{no}
+  </select>
+<!-- 검색차단상태 확인 -->
+
+<!-- 검색차단상태 변경 -->
+  <update id = "updateBlockSearch" parameterType = "BitMessenger">
+  	update tb_members
+  	   set block_search = #{blockSearch}
+  	 where no = #{no}
+  </update>
+<!-- 검색차단상태 변경 -->
+
+
+<!-- 가입정보 확인 -->
+  <select id = "selectSearchAll" parameterType = "BitMessenger" resultMap="BitMessengerMap">
+	select *
+	  from tb_members
+	 where no = #{no}
+  </select>
+<!-- 가입정보 확인 -->
+
 
   <!--  진솔   -->
 </mapper>
