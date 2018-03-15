@@ -6,12 +6,13 @@ import org.apache.ibatis.session.SqlSession;
 
 import common.db.MyAppSqlConfig;
 import domain.BitMessenger;
-import main.ui.LoginUI;
+import main.ui.SignInUI;
 import mapper.BitMessengerMapper;
 
 public class Getter {
 	private static BitMessengerMapper mapper;
 	private static Scanner sc = new Scanner(System.in);
+	public static BitMessenger info;
 	
 	
 	static {
@@ -35,7 +36,8 @@ public class Getter {
 	}
 	
 	// 로그인된  user information -jy
-	public static BitMessenger Loginuserinfo(BitMessenger info) {
+
+	public static BitMessenger getLoginInfo( ) {
 		return info;
 		
 	}
