@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="kr.co.mini.message.mapper.MessageMapper">
+
+	<resultMap id = "messageMap" type = "message">
+		<result column="no" property="no" />
+		<result column="my_id" property="myID" />
+		<result column="your_id" property="yourID" />
+		<result column="message" property="msg" />
+		<result column="my_view_cnt" property="myViewCnt" />
+		<result column="your_view_cnt" property="yourViewCnt" />
+		<result column="reg_date" property="regDate" />
+	</resultMap>
+	
+	<select id="loadMessage" resultMap = "messageMap">
+		select *
+		from tb_message
+		order by reg_date
+	</select>
+	
+	<select id="selectMessage" parameterType = "int" resultMap = "messageMap">
+		select *
+		from tb_message
+		where no = #{int}
+		order by reg_date
+	</select>
+	
+	<insert id="insertMessage" parameterType = "message">
+		insert into tb_message (
+			no,
+			my_id,
+			your_id,
+			message
+		) values (
+			#{no},
+			#{myID},
+			#{yourID},
+			#{msg}
+		)
+	</insert>
+	
+	<update id="updateMessageViewCnt">
+		update 	tb_message
+		set 	your_view_cnt = 0
+	</update>
+	
+</mapper>
