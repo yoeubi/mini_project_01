@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapper.FriendMapper">
+	<!-- Friend Table resultMap -->
+	<resultMap id="FriendMap" type="FriendVO">
+		<result column="id" property="id" />
+		<result column="f_id" property="fId" />
+		<result column="request_date" property="requestDate" />
+		<result column="acceptance" property="acceptance" />
+	</resultMap>
+
+	<!-- 민희 -->
+	<select id="frList" parameterType="string" resultMap="FriendMap" >
+		select f_id
+		from tb_friend
+		where id = #{id}
+	</select>
+
+	<select id="fProView" parameterType="FriendVO" resultType="string">
+		select f.f_id, m.statue_msg
+		from tb_friend f
+		inner join tb_members m
+    		on f.id = m.id
+		where f.f_id = #{f_id}		
+	</select>
+
+</mapper>
