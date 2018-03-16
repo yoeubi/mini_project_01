@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapper.BitMessengerMapper">
+
+<!--  진솔   -->
+	<!--  회원가입  -->
+  <resultMap id = "BitMessengerMap" type = "BitMessenger">
+  		
+  		<result column="no" property="no"/>
+  		<result column="id" property="id"/>
+  		<result column="pass" property="pass"/>
+  		<result column="name" property="name"/>
+  		<result column="phon_no" property="phonNo"/>
+  		<result column="pass_hint" property="passHint"/>
+  		<result column="pass_key" property="passKey"/>
+  		<result column="join_date" property="joinDate"/>
+  		<result column="invisible" property="invisible"/>
+  		<result column="block_search" property="blockSearch"/>
+  		<result column="statue_msg" property="statueMsg"/>
+  	
+  </resultMap>
+
+  
+  <select id = "selectMemberByNoGetID" parameterType="string" resultType="string">
+  	select id
+  	  from tb_members
+  	 where id=#{id}
+  </select>
+  
+  <insert id = "insertMember" parameterType="BitMessenger">
+  	insert into tb_members(
+  		    no,
+  			id,
+  			pass,
+  			name,
+  			phon_no,
+  			pass_hint,
+  			pass_key
+  		   )
+  		   values(
+  		   s_member_no.nextval,
+  		   #{id},
+  		   #{pass},
+  		   #{name},
+  		   #{phonNo},
+  		   #{passHint},
+  		   #{passKey}
+  		   )
+  </insert>
+
+<!--  회원가입   -->
+
+<!-- 상태 메세지 확인 -->
+  <select id = "selectStatueMsg" parameterType = "int" resultType="string">
+	select statue_msg
+	  from tb_members
+	 where no = #{no}
+  </select>
+<!-- 상태 메세지 확인 -->
+
+<!-- 상태 메세지 수정 -->
+  <update id = "updateStatueMsg" parameterType = "BitMessenger">
+  	update tb_members
+  	   set statue_msg = #{statueMsg}
+  	 where no = #{no}
+  </update>
+<!-- 상태 메세지 수정 -->
+
+<!-- password 확인 -->
+  <select id = "selectPassword" parameterType = "int" resultType="string">
+	select pass
+	  from tb_members
+	 where no = #{no}
+  </select>
+<!-- password 확인 -->
+
+<!-- password 수정 -->
+  <update id = "updatePassword" parameterType = "BitMessenger">
+  	update tb_members
+  	   set pass = #{pass}
+  	 where no = #{no}
+  </update>
+<!-- password 수정 -->
+
+<!-- 핸드폰번호 확인 -->
+  <select id = "selectPhonNo" parameterType = "int" resultType="string">
+	select phon_no
+	  from tb_members
+	 where no = #{no}
+  </select>
+<!-- 핸드폰번호 확인 -->
+
+<!-- 핸드폰번호 수정 -->
+  <update id = "updatePhonNo" parameterType = "BitMessenger">
+  	update tb_members
+  	   set phon_no = #{phonNo}
+  	 where no = #{no}
+  </update>
+<!-- 핸드폰번호 수정 -->
+
+<!-- 핸드폰 번호 있는지 확인 -->
+  <select id = "selectPhonNoOverlap" parameterType="string" resultType="string">
+  	select phon_no
+  	  from tb_members
+  	 where phon_no = #{phonNo}
+  </select>
+<!-- 핸드폰 번호 있는지 확인 -->
+
+<!-- 회원탈퇴 -->
+  <update id = "updateinvisibleMember" parameterType = "BitMessenger">
+  	update tb_members
+  	   set invisible = #{invisible}
+  	 where no = #{no}
+  </update>
+<!-- 회원탈퇴 -->
+
+
+<!-- 검색차단상태 확인 -->
+  <select id = "selectBlockSearch" parameterType = "int" resultType="int">
+	select block_search
+	  from tb_members
+	 where no = #{no}
+  </select>
+<!-- 검색차단상태 확인 -->
+
+<!-- 검색차단상태 변경 -->
+  <update id = "updateBlockSearch" parameterType = "BitMessenger">
+  	update tb_members
+  	   set block_search = #{blockSearch}
+  	 where no = #{no}
+  </update>
+<!-- 검색차단상태 변경 -->
+
+
+<!-- 가입정보 확인 -->
+  <select id = "selectSearchAll" parameterType = "BitMessenger" resultMap="BitMessengerMap">
+	select *
+	  from tb_members
+	 where no = #{no}
+  </select>
+<!-- 가입정보 확인 -->
+
+<!-- 유저 정보 확인 -->
+  <select id = "selectSearchInfo" parameterType = "string" resultMap="BitMessengerMap">
+  	select *
+      from tb_members
+     where id = #{id}
+  </select>
+<!-- 유저 정보 확인 -->
+
+<!-- 유저 정보 확인 -->
+  <select id = "selectSetPhonNoGetId" parameterType = "string" resultType="string">
+  	select id
+      from tb_members
+     where phon_no = #{phonNo}
+  </select>
+<!-- 유저 정보 확인 -->
+
+  <!--  진솔   -->
+</mapper>

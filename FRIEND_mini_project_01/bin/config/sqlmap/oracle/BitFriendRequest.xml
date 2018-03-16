@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapper.BitFriendRequestMapper">
+
+<!--  진솔   -->
+	<!--  회원가입  -->
+  <resultMap id = "BitFriendRequestMap" type = "BitFriendRequest">
+  		<result column="no" property="no"/>
+  		<result column="in_id" property="inId"/>
+  		<result column="out_id" property="outId"/>
+  </resultMap>
+
+  <insert id = "insertOutRequestFriend" parameterType = "BitFriendRequest">
+  	insert into tb_f_request(
+  		   in_id,
+ 		   out_id,
+  		   request_no
+  		   )
+  	       values(
+  	       #{inId},
+  	       #{outId},
+  	       s_requst_no.nextval
+  	       )
+  </insert>
+
+  <select id = "selectRequestFriend" parameterType = "BitFriendRequest" resultMap = "BitFriendRequestMap">
+  	select out_id,
+  		   in_id
+  	  from tb_f_request
+  	 where out_id = #{outId}
+  	       and in_id = #{inId}
+  </select>
+
+  <!--  진솔   -->
+</mapper>
